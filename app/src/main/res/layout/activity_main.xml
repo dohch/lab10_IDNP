@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧠 LAB10 - Monitor de Estrés"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        android:background="#E3F2FD"
+        android:textColor="#000000"/>
+
+    <!-- Estado -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado: INACTIVO"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000"/>
+
+    <!-- Worker Status -->
+    <TextView
+        android:id="@+id/tvWorkerStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Worker: No iniciado"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000"/>
+
+    <!-- Última acción -->
+    <TextView
+        android:id="@+id/tvLastAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Última acción: Ninguna"
+        android:textSize="14sp"
+        android:layout_marginBottom="32dp"
+        android:textColor="#000000"/>
+
+    <!-- Botón INICIAR -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INICIAR MONITOREO"
+        android:layout_marginBottom="16dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <!-- Botón DETENER -->
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DETENER MONITOREO"
+        android:layout_marginBottom="16dp"
+        android:background="#F44336"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <!-- Botón EJECUTAR UNA VEZ -->
+    <Button
+        android:id="@+id/btnRunOnce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EJECUTAR AHORA"
+        android:layout_marginBottom="32dp"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"/>
+
+    <!-- Área de logs -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📋 Registros:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000"/>
+
+    <!-- ScrollView para logs -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FFFFFF"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los logs aparecerán aquí..."
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textColor="#000000"/>
+
+    </ScrollView>
+
+    <!-- Información -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WorkManager ejecutándose en segundo plano"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:textColor="#757575"/>
+
+</LinearLayout>

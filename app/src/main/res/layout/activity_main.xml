@@ -1,124 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
+    android:padding="16dp"
     android:background="#F5F5F5">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/tvTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🧠 LAB10 - Monitor de Estrés"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"
-        android:padding="16dp"
-        android:background="#E3F2FD"
-        android:textColor="#000000"/>
+        android:orientation="vertical">
 
-    <!-- Estado -->
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Estado: INACTIVO"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        android:textColor="#000000"/>
-
-    <!-- Worker Status -->
-    <TextView
-        android:id="@+id/tvWorkerStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Worker: No iniciado"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"
-        android:textColor="#000000"/>
-
-    <!-- Última acción -->
-    <TextView
-        android:id="@+id/tvLastAction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Última acción: Ninguna"
-        android:textSize="14sp"
-        android:layout_marginBottom="32dp"
-        android:textColor="#000000"/>
-
-    <!-- Botón INICIAR -->
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="INICIAR MONITOREO"
-        android:layout_marginBottom="16dp"
-        android:background="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"/>
-
-    <!-- Botón DETENER -->
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DETENER MONITOREO"
-        android:layout_marginBottom="16dp"
-        android:background="#F44336"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"/>
-
-    <!-- Botón EJECUTAR UNA VEZ -->
-    <Button
-        android:id="@+id/btnRunOnce"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="EJECUTAR AHORA"
-        android:layout_marginBottom="32dp"
-        android:background="#2196F3"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"/>
-
-    <!-- Área de logs -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="📋 Registros:"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:textColor="#000000"/>
-
-    <!-- ScrollView para logs -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFFFFF"
-        android:padding="8dp">
-
+        <!-- Título -->
         <TextView
-            android:id="@+id/tvLogs"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Los logs aparecerán aquí..."
-            android:textSize="12sp"
-            android:fontFamily="monospace"
+            android:text="LAB10 - Monitor de Estrés"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:padding="16dp"
+            android:background="#E3F2FD"
             android:textColor="#000000"/>
 
-    </ScrollView>
+        <!-- SECCIÓN: MONITOREO AUTOMÁTICO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monitoreo Automático"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#2196F3"/>
 
-    <!-- Información -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="WorkManager ejecutándose en segundo plano"
-        android:textSize="12sp"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:textColor="#757575"/>
+        <!-- Estado del Worker -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estado: INACTIVO"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvWorkerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Worker: No iniciado"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <!-- Botones de control monitoreo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INICIAR"
+                android:layout_marginEnd="8dp"
+                android:background="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DETENER"
+                android:layout_marginStart="8dp"
+                android:background="#F44336"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- SECCIÓN: TEMPORIZADOR -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temporizador Anti-Estrés"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#FF9800"/>
+
+        <!-- Estado del temporizador -->
+        <TextView
+            android:id="@+id/tvTimerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temporizador: Inactivo"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"/>
+
+        <!-- Opciones de duración -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Duración del temporizador:"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"/>
+
+        <RadioGroup
+            android:id="@+id/rgTimerDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rb5min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5 min"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rb10min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10 min"/>
+
+            <RadioButton
+                android:id="@+id/rb15min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="15 min"/>
+        </RadioGroup>
+
+        <!-- Botones del temporizador -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnStartTimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INICIAR TEMPORIZADOR"
+                android:layout_marginEnd="8dp"
+                android:background="#FF9800"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btnStopTimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DETENER"
+                android:layout_marginStart="8dp"
+                android:background="#795548"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- Botón de alivio rápido -->
+        <Button
+            android:id="@+id/btnQuickTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ALIVIO RÁPIDO (1 min)"
+            android:layout_marginBottom="24dp"
+            android:background="#9C27B0"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- SECCIÓN: ACCIONES MANUALES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acciones Manuales"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#673AB7"/>
+
+        <!-- Botón chequeo manual -->
+        <Button
+            android:id="@+id/btnRunOnce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHEQUEO MANUAL DE ESTRÉS"
+            android:layout_marginBottom="24dp"
+            android:background="#2196F3"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- SECCIÓN: LOGS -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registros de Actividad"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textColor="#4CAF50"/>
+
+        <!-- Última acción -->
+        <TextView
+            android:id="@+id/tvLastAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Última acción: Ninguna"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#000000"/>
+
+        <!-- Área de logs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvLogs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bienvenido al Monitor de Estrés LAB10\n\nSelecciona una opción para comenzar..."
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="#000000"/>
+
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Información -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WorkManager ejecutándose en segundo plano"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="#757575"/>
+
+    </LinearLayout>
+</ScrollView>

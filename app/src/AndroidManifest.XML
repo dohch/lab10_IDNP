@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lab10_indp">
 
-    <!-- Solo el permiso esencial -->
+    <!-- Permisos para WorkManager -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Permiso para notificaciones (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Permiso para vibrar (opcional) -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@android:drawable/ic_dialog_info"  <!-- Ícono del sistema -->
-    android:label="LAB10 - Monitor de Estrés"  <!-- Texto directo -->
-    android:theme="@android:style/Theme.Material.Light">  <!-- Tema del sistema -->
+        android:icon="@mipmap/ic_launcher"
+        android:label="LAB10 - Monitor de Estrés"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
 
-    <activity
-        android:name=".MainActivity"
-        android:exported="true"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-</application>
-    </manifest>
+    </application>
+</manifest>
